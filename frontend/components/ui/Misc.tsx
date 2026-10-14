@@ -76,19 +76,14 @@ export function Overline({ children }: { children: React.ReactNode }) {
   return <div className="text-[11.5px] font-semibold uppercase leading-4 tracking-[0.06em] text-ink-500">{children}</div>;
 }
 
-export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
-  const large = size === "lg";
+/** The "Medin" wordmark, linking home. Used in the top nav and on sign in / sign up. */
+export function Logo() {
   return (
-    <Link className="flex shrink-0 items-center gap-2 text-ink-900 hover:no-underline" href="/feed">
-      <span
-        className={clsx(
-          "flex items-center justify-center bg-teal-600 font-serif font-bold leading-none text-white",
-          large ? "h-10 w-10 rounded-md text-2xl" : "h-[26px] w-[26px] rounded text-base",
-        )}
-      >
-        M
-      </span>
-      {!large && <span className="font-serif text-[21px] font-bold leading-none tracking-[-0.01em]">Medin</span>}
+    <Link
+      className="shrink-0 font-serif text-[21px] font-bold leading-none tracking-[-0.01em] text-ink-900 hover:no-underline"
+      href="/feed"
+    >
+      Medin
     </Link>
   );
 }
