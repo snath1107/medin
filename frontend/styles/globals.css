@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/*
+ * Medin design tokens. Every colour, font and shadow in the app comes from here,
+ * so components stay consistent. Usage: bg-paper-50, text-ink-500, border-line-200 …
+ */
+@theme {
+  --font-sans: var(--font-source-sans), system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  /* Accent: teal marks everything you can act on */
+  --color-teal-50: #edf5f5; /* selected fill, hover */
+  --color-teal-100: #d5e8e9; /* pressed */
+  --color-teal-200: #a9cfd2; /* tag hover border */
+  --color-teal-600: #0f6a73; /* primary, links */
+  --color-teal-700: #0b5a62; /* primary hover */
+  --color-teal-800: #084a51; /* primary active */
+  --color-teal-text: #0b5560; /* text on teal-50 */
+
+  /* Ink: text */
+  --color-ink-900: #1d2124; /* primary text */
+  --color-ink-700: #3d4448; /* body text */
+  --color-ink-600: #5f676c;
+  --color-ink-500: #687075; /* secondary text */
+  --color-ink-400: #8e959a; /* placeholder */
+  --color-ink-300: #a3a9ad; /* disabled */
+
+  /* Lines: borders and dividers */
+  --color-line-500: #a9a59c; /* input hover, radio */
+  --color-line-400: #c9c5bc; /* dashed, toggle off */
+  --color-line-300: #d3d0c9; /* input border */
+  --color-line-200: #e4e1db; /* cards, nav */
+  --color-line-100: #eeece7; /* rows inside cards */
+
+  /* Paper: backgrounds */
+  --color-paper-50: #f7f6f3; /* page */
+  --color-paper-75: #faf9f7; /* comment area, toolbars */
+  --color-paper-100: #f3f2ee; /* subtle fill, hover */
+  --color-paper-200: #e9e7e1; /* pressed, skeleton */
+
+  /* Status colours: only for status, never decoration */
+  --color-success-600: #2f7a4c;
+  --color-success-50: #eaf4ee;
+  --color-warning-600: #9a6410;
+  --color-warning-700: #7e520c;
+  --color-warning-50: #fbf3e4;
+  --color-danger-600: #b42318;
+  --color-danger-700: #9a1d14;
+  --color-danger-800: #7f1810;
+  --color-danger-200: #f0c6c1;
+  --color-danger-50: #fbedeb;
+
+  /* Elevation: only for things that float above the page */
+  --shadow-raised: 0 1px 2px rgba(29, 33, 36, 0.06);
+  --shadow-float: 0 8px 24px rgba(29, 33, 36, 0.12);
+  --shadow-modal: 0 16px 48px rgba(29, 33, 36, 0.2);
+
+  --animate-pulse-soft: pulse-soft 1.4s ease-in-out infinite;
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+
+body {
+  @apply bg-paper-50 font-sans text-ink-900 antialiased;
+}
+
+/* Native <dialog> backdrop (see components/ui/Modal.tsx) */
+dialog::backdrop {
+  background: rgba(29, 33, 36, 0.45);
+}
+
+/* ---------- Rich text (TipTap) ---------- */
+
+.rich-text {
+  @apply text-base leading-[26px] text-ink-700;
+  overflow-wrap: anywhere;
+}
+.rich-text p + p,
+.rich-text p + ul,
+.rich-text p + ol,
+.rich-text ul + p,
+.rich-text ol + p {
+  margin-top: 14px;
+}
+.rich-text ul {
+  @apply list-disc pl-6;
+}
+.rich-text ol {
+  @apply list-decimal pl-6;
+}
+.rich-text strong {
+  @apply font-semibold text-ink-900;
+}
+.rich-text img {
+  @apply my-3 max-w-full rounded border border-line-200;
+}
+.rich-text-compact {
+  @apply text-[15px] leading-[23px] text-ink-900;
+}
+
+.ProseMirror {
+  outline: none;
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  @apply text-ink-400;
+}

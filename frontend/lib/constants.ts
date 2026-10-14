@@ -1,0 +1,35 @@
+/** Options for the specialization dropdown (sign-up and edit profile). */
+export const SPECIALIZATIONS = [
+  "Anaesthesiology",
+  "Cardiology",
+  "Cardiothoracic Surgery",
+  "Dermatology",
+  "Emergency Medicine",
+  "Endocrinology",
+  "ENT",
+  "Family Medicine",
+  "Gastroenterology",
+  "General Medicine",
+  "General Surgery",
+  "Nephrology",
+  "Neurology",
+  "Neurosurgery",
+  "Obstetrics & Gynaecology",
+  "Oncology",
+  "Ophthalmology",
+  "Orthopedics",
+  "Pathology",
+  "Pediatrics",
+  "Psychiatry",
+  "Pulmonology",
+  "Radiology",
+  "Urology",
+];
+
+export const INDIAN_STATES = [
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Delhi", "Goa", "Gujarat",
+  "Haryana", "Himachal Pradesh", "Jammu & Kashmir", "Jharkhand", "Karnataka", "Kerala", "Ladakh",
+  "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry",
+  "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+  "West Bengal",
+];
